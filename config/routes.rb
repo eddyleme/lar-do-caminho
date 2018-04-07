@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'homes/index'
+
+  get 'homes/contact'
+
   get 'tickets/index'
 
   get 'tickets/show'

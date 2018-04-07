@@ -4,7 +4,7 @@
 <%= flash.now[:notice] %>
 </p>
 <% end %>
-<%= form_tag sessions_path do %>
+<%= form_with scope: :session, url: sessions_path do |form| %>
 <p>
 <%= label_tag :email %>
 <%= text_field_tag :email %>
