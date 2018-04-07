@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+
   get '/login' => 'sessions#new'
   root 'home#index'
   resource :sessions
