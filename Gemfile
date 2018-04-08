@@ -7,15 +7,9 @@ end
 
 # Bootstrap framework for frontend
 gem 'bootstrap-sass', '~> 3.3.7'
-  # --Required for Bootstrap-- Bstrap needs Autoprefixer to run.
-  gem 'autoprefixer-rails', '~> 8.2'
-    # --Required for Bootstrap-- ...which needs ExecJS to run JS in ruby.
-    gem 'execjs', '~> 2.7'
-
-
 # Animate.css, now in Rails form!
 gem 'animate-rails', '~> 1.0', '>= 1.0.10'
-# (no funky requirements)
+
 
 gem 'paypal-ipn', :require => 'paypal'
 gem 'httparty'
