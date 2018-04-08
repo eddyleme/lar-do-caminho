@@ -5,6 +5,7 @@ class Admin < ApplicationRecord
 	validates :email, uniqueness: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  validates :password, length: { minimum: 3 }
 	has_secure_password
 
 
@@ -14,14 +15,10 @@ class Admin < ApplicationRecord
     update_attribute(:reset_sent_at, Time.zone.now)
   end
 
-  # Sends password reset email.
   def send_password_reset_email
     AdminMailer.password_reset(self).deliver_now
   end
 	
-	def make_email_lower
-		self.email.downcase!
-	end
 
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
@@ -37,13 +34,24 @@ class Admin < ApplicationRecord
     update_attribute(:remember_digest, Admin.digest(remember_token))
   end
 
-  def authenticated?(remember_token)
-  	return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+	def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
+  private
+
+	def make_email_lower
+		self.email.downcase!
+	end
 
 end
