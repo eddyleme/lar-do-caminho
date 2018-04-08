@@ -9,7 +9,8 @@ end
 gem 'bootstrap-sass', '~> 3.3.7'
 # Animate.css, now in Rails form!
 gem 'animate-rails', '~> 1.0', '>= 1.0.10'
-
+# Jquery. Because Jquery. (and Boostrap needs it for Rails 5.1+ but doesn't bring it in as a dependency. sigh.)
+gem 'jquery-rails'
 
 gem 'paypal-ipn', :require => 'paypal'
 gem 'httparty'
