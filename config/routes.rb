@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'carts/show'
 
   get '/login' => 'sessions#new'
-  root 'home#index'
+  root 'homes#index'
   resource :sessions
 
 	delete '/logout' => 'sessions#destroy'
