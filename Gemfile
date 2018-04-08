@@ -11,6 +11,9 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'animate-rails', '~> 1.0', '>= 1.0.10'
 # Jquery. Because Jquery. (and Boostrap needs it for Rails 5.1+ but doesn't bring it in as a dependency. sigh.)
 gem 'jquery-rails'
+# Font Awesome. Awesome.
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
+
 
 gem 'paypal-ipn', :require => 'paypal'
 gem 'httparty'
