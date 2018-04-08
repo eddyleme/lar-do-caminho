@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show]
+
   def index
     @events = Event.all
   end
 
   def show
-    @event = Event.find(params:[:id])
   end
 
   def new
@@ -14,5 +15,9 @@ class EventsController < ApplicationController
   def update
   end
 
+  private
 
+  def set_event
+    @event = Event.find(params[:id])
+  end
 end
