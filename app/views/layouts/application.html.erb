@@ -1,110 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lar-Do-Caminho</title>
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+<head>
+  <title>Lar-Do-Caminho</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-    <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <div id="body-bg">
-        <!-- Pre-header -->
-        <div id="pre-header" class="background-gray-lighter">
-            <div class="container no-padding">
-                <div class="row hidden-xs">
-                    <div class="col-sm-6 text-left padding-vert-5">
-                        <strong>LAR DO CAMINHO USA</strong>
-                    </div>
-                    <div class="col-sm-6 text-right padding-vert-5">
-                        <strong>Email:</strong>&nbsp;<a href="mailto:admin@lardocaminhousa.org">admin@lardocaminhousa.org</a>
-                    </div>
-                </div>
-            </div>
+<body>
+  <div id="body-bg">
+    <!-- Pre-header -->
+    <div id="pre-header" class="background-gray-lighter">
+      <div class="container no-padding">
+        <div class="row hidden-xs">
+          <div class="col-sm-6 padding-vert-5">
+            <strong>LAR DO CAMINHO USA</strong>
+          </div>
+          <div class="col-sm-6 text-right padding-vert-5">
+            <strong>Email:</strong>&nbsp;<a href="mailto:admin@lardocaminhousa.org">admin@lardocaminhousa.org</a>
+          </div>
         </div>
-        <!-- End Phone/Email -->
-        <!-- Header -->
-        <div id="header">
-            <div class="container">
-                <div class="row">
-                    <!-- Logo -->
-                    <div class="col-md-12 no-padding">
+      </div>
+    </div>
+    <!-- End Pre-header -->
+    <!-- Header -->
+    <div id="header">
+      <div class="container col-md-0 no-padding">
+        <div class="row">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" title="">
+              <a href="#">
+                <img src="assets/favicon.png" class="ldclogo" alt="Logo" />
+              </a>
 
-                            <img src="assets/favicon.png"  alt="Logo" style="padding-top: 0px;" />
-                        </a>
+              <!-- Top Menu -->
+              <div id="hornav" class="bottom-border-shadow">
+                <div class="container border-bottom">
+                  <div class="row">
+                    <div class="col-md-11 no-padding">
+                      <div class="visible-lg">
+                        <ul id="hornavmenu" class="nav navbar-nav">
+                          <li>
+                            <a href="#" class="fa fa-home">Home</a>
+                          </li>
+                          <li>
+                            <a href="#aboutus" class="fa fa-info-circle">About</a>
+                            <ul>
 
-                            <img src="assets/img/donatebutton.jpg"  alt="Donate" style="padding-top: 0px;" />
-                        </a>
+                              <li>
+                                <a href="#ourteam" class="">Our Team</a>
+                              </li>
+
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#portfolio" class="fa fa-picture-o">Gallery</a>
+                          </li>
+
+                          <li>
+                            <a href="#events" class="fa fa-bullhorn">Events</a>
+                          </li>
+
+                          <li>
+                            <a href="#donate" class="fa fa-gift">Donate</a>
+
+                          </li>
+
+                        </ul>
+                      </div>
                     </div>
-                    <!-- End Logo -->
+                    <div class="col-md-0">
+                      <ul class="social-icons rounded">
+
+
+                        <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook"> <li> <i class="fa fa-facebook fa-2x">
+                        </li></i></a>
+
+                        <a href="http://www.instagram.com/lardocaminhousa" title="Instagram"> <li> <i class="fa fa-instagram fa-2x">
+                        </i></li></a>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+
+
+
+              <!-- End Logo -->
             </div>
+          </div>
         </div>
         <!-- End Header -->
-        <!-- Top Menu -->
-        <div id="hornav" class="bottom-border-shadow">
-            <div class="container no-padding border-bottom">
-                <div class="row">
-                    <div class="col-md-12 no-padding">
-                        <div class="visible-lg">
-                        <ul id="hornavmenu" class="nav navbar-nav" style="width: 900px;">
-                            <li>
-                                <a href="#" class="fa-home">Home</a>
-                            </li>
-                            <li>
-                                <a href="#aboutus"><span class="fa-info-circle">About</span></a>
-                <ul>
-
-                                            <li>
-                                                <a href="#ourteam" class="">Our Team</a>
-                                            </li>
 
 
-
-                                    </ul>
-                            </li>
-
-                    <li>
-                      <a href="#portfolio" class="fa-picture-o">Gallery</a>
-                    </li>
-
-                    <li>
-                      <a href="#contact" class="fa-bullhorn">Volunteer</a>
-                    </li>
-                    <li>
-                      <a href="#events" class="fa-check">Voter Info</a>
-                    </li>
-
-
-
-
-                            <li>
-                                <a href="#donate" class="fa-gift">Donate</a>
-
-                            </li>
-
-                        </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 no-padding">
-                        <ul class="social-icons pull-right">
-
-                            <li class="social-facebook">
-                                <a href="http://www.facebook.com/lardocaminhousa" target="_blank" title="Facebook"></a>
-            </li>
-                            <li class="social-instagram">
-                                <a href="http://www.instagram.com/lardocaminhousa" target="_blank" title="Instagram"></a>
-            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
+<div class="main">
+      <%= yield %>
 </div>
 
-    <%= yield %>
-  </body>
-</html>
+      <!-- Footer -->
+      <div id="footer" class="background-grey">
+        <div class="container">
+          <div class="row">
+            <!-- Footer Menu -->
+            <div id="footermenu" class="col-md-8">
+              <p class="pull-left">&copy; Lar-Do-Caminho All rights reserved.</p>
+            </div>
+            <!-- End Footer Menu -->
+
+            <div id="copyright" class="col-md-4">
+              <p class="pull-right">
+                Design: <a href="https://github.com/eddyleme/lar-do-caminho">Wyncoders</a></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>
