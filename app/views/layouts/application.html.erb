@@ -9,6 +9,12 @@
   </head>
 
   <body>
+  	<% if current_admin.present? %>
+	  	<%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Login", login_path %>
+	  <% end %>
+      <%= link_to "Events", events_path %>
     <%= yield %>
   </body>
 </html>

@@ -11,5 +11,5 @@
 <% if current_admin.present? %>
 	<%= render 'form' , package: @package, event_id: @event_id %>
 <% else %>
-	<%= %>
 <% end %>
+	<%= render 'ticket_form' %>
