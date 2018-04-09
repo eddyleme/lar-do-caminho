@@ -13,7 +13,7 @@
 <body>
   <div id="body-bg">
     <!-- Pre-header -->
-    <div id="pre-header" class="background-gray-lighter">
+    <div id="pre-header" class="background-gray">
       <div class="container no-padding">
         <div class="row hidden-xs">
           <div class="col-sm-6 padding-vert-5">
@@ -31,19 +31,44 @@
       <div class="container col-md-0 no-padding">
         <div class="row">
           <!-- Logo -->
-          <div class="logo">
+          <!-- <div class="logo">
             <a href="index.html" title="">
               <a href="#">
                 <img src="assets/favicon.png" class="ldclogo" alt="Logo" />
               </a>
-
+          </div> -->
               <!-- Top Menu -->
               <div id="hornav" class="bottom-border-shadow">
-                <div class="container border-bottom">
+                <div class="container no-padding border-bottom">
+
                   <div class="row">
-                    <div class="col-md-11 no-padding">
+
+                    <div class="col-md-0">
+                      <ul class="social-icons rounded pull-right">
+
+
+                        <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook"> <li> <i class="fa fa-facebook fa-2x">
+                        </li></i></a>
+
+                        <a href="http://www.instagram.com/lardocaminhousa" title="Instagram"> <li> <i class="fa fa-instagram fa-2x">
+                        </i></li></a>
+                      </ul>
+                    </div>
+                                      <img src="assets/favicon.png" class="ldclogo" alt="Logo" />
+                    <div class="col-md-9 no-padding pull-right">
+
                       <div class="visible-lg">
                         <ul id="hornavmenu" class="nav navbar-nav">
+                          <li>
+                            <!-- < if current_user > -->
+                            <!-- Signed in as <= current_user.username >. -->
+                            <i class="fas fa-sign-out">
+                            <!-- <= link_to "Log out", sessions_path("current"), :method => :delete > -->
+                            </i>
+                            <a href="#" class="">Log out</a>
+                            <!-- < else >
+                            < end > -->
+                          </li>
                           <li>
                             <a href="#" class="fa fa-home">Home</a>
                           </li>
@@ -52,7 +77,9 @@
                             <ul>
 
                               <li>
-                                <a href="#ourteam" class="">Our Team</a>
+
+                                <a href="#ourteam"><i class="fas fa-users"></i>Our Team</a>
+
                               </li>
 
                             </ul>
@@ -70,30 +97,13 @@
                             <a href="#donate" class="fa fa-gift">Donate</a>
 
                           </li>
-
                         </ul>
                       </div>
                     </div>
-                    <div class="col-md-0">
-                      <ul class="social-icons rounded">
 
-
-                        <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook"> <li> <i class="fa fa-facebook fa-2x">
-                        </li></i></a>
-
-                        <a href="http://www.instagram.com/lardocaminhousa" title="Instagram"> <li> <i class="fa fa-instagram fa-2x">
-                        </i></li></a>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>
-
-
-
-
-              <!-- End Logo -->
-            </div>
           </div>
         </div>
         <!-- End Header -->
@@ -101,6 +111,17 @@
 
       </div>
 <div class="main">
+
+  <svg width="1000" height="500">
+    <defs>
+    <filter id="filter" filterUnits="userSpaceOnUse" x="0" y="0" height="200" width="700">
+      <feTurbulence baseFrequency="0.2" numOctaves="4" type="fractalNoise" />
+      <feDisplacementMap  scale="8"  xChannelSelector="R" in="SourceGraphic" />
+
+    </filter>
+    </defs>
+    <path d="M 175 200 l 150 0" stroke="yellow" stroke-width="10" style="filter:url(#filter)"/>
+
       <%= yield %>
 </div>
 
