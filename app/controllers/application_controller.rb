@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
 		return true if current_admin
 		return redirect_to root_path
 	end
+  def current_cart
+   session[:cart_id] ||= Cart.create!.id
+   @current_cart ||= Cart.find(session[:cart_id])
+  end
 end
