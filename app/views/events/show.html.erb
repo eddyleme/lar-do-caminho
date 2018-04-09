@@ -1,5 +1,15 @@
 <h1><%= @event.name %></h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<p>events/show.html.erb</p>
+
 <% @event.packages.each do |package| %>
-	<%= link_to "#{package.name}", event_package_path(package) %>
+	<%= package.name %>
+	<% if current_admin.present? %>
+		<%= link_to 'Destroy', package, method: :delete %>
+	<% end %>
+<% end %>
+
+<% if current_admin.present? %>
+	<%= render 'form' , package: @package, event_id: @event_id %>
+<% else %>
+	<%= %>
 <% end %>

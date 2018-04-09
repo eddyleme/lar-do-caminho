@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 	get '/logout' => 'sessions#destroy'
 
 	resources :password_resets, only: [:new, :create, :edit, :update]
-	resources :events do
+	resources :events, shallow: true do
 		resources :packages do
 			resources :tickets
 		end

@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
 		return true if current_admin
 		return redirect_to root_path
 	end
+
+	def logged_in?
+		return true if current_admin
+	end
 end
