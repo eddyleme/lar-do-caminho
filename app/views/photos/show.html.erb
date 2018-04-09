@@ -1,2 +1,13 @@
-<h1>Photos#show</h1>
-<p>Find me in app/views/photos/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>File:</strong>
+  <%= @photo.file %>
+</p>
+
+<p>
+  <strong>Photo album:</strong>
+  <%= @photo.album %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%#= link_to 'Back', photos_path %>
