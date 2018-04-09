@@ -6,6 +6,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -38,20 +39,20 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @photo_album.destroy
+    @album.destroy
     respond_to do |format|
-      format.html { redirect_to photo_albums_url, notice: 'Photo album was successfully destroyed.' }
+      format.html { redirect_to albums_url, notice: 'Photo album was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_photo_album
-      @photo_album = PhotoAlbum.find(params[:id])
+    def set_album
+      @album = Album.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def photo_album_params
-      params.require(:photo_album).permit(:title, :description, :cover_image)
+    def album_params
+      params.require(:album).permit(:album_title, :cover_photo)
     end
 end

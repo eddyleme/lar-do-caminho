@@ -1,7 +1,7 @@
 class Photo < ApplicationRecord
   belongs_to :album
 
-  mount-uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
   before_save :update_photo_attributes
 

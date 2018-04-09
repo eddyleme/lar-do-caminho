@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'carts/show'
-  get 'photo_albums#index'
-    resources :photo_albums do
+  get 'albums/index'
+    resources :albums do
       resources :photos, shallow: true
     end
 

@@ -1,2 +1,19 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Album Title:</strong>
+  <%= @album.album_title %>
+</p>
+
+<p>
+  <strong>Cover Photo:</strong>
+  <%= @album.cover_photo %>
+</p>
+
+<%= link_to 'Add Photo', new_album_photo_path(@album) %> |
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
+<% @album.photos.each do |photo| %>
+	<p>
+		<%= image_tag photo.file.url %>
+	</p>
+<% end %>
