@@ -8,6 +8,8 @@ class EventsController < ApplicationController
 
   def show
     @package = Package.new
+    @ticket = Ticket.new
+    @tickets = Ticket.all
   end
 
   def new

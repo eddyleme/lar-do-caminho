@@ -12,4 +12,8 @@
 	<%= render 'form' , package: @package, event_id: @event_id %>
 <% else %>
 <% end %>
-	<%= render 'ticket_form' %>
+<% @event.packages.each do |package| %>
+	<%= render 'ticket_form' , ticket: @ticket, package: package, package_id: package.id%>
+<% end %>
+
+
