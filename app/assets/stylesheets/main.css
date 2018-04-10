@@ -52,7 +52,7 @@ body {
   position: relative;
 }
 .container {
-  max-width: 1080px;
+  /* max-width: 1080px; */
   padding-left: 40px;
   padding-right: 40px;
   width: 100%;
@@ -108,9 +108,7 @@ p.site-slogan {
 #hornav {
   z-index: 21;
 }
-.is-sticky #hornav {
-  z-index: 21;
-}
+
 /*-----------------------------------------------------------------------------------*/
 /* Footer */
 /*-----------------------------------------------------------------------------------*/
@@ -151,8 +149,7 @@ p.site-slogan {
   background: rgba(0, 0, 0, 0.85);
   color: #bbb;
   color: rgba(255, 255, 255, 0.5);
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 5px;
 }
 #footermenu ul {
   margin: 0;
@@ -867,12 +864,12 @@ p.site-slogan {
   top: 60px;
 }
 #hornav li ul li ul {
-  left: 220px;
+  left: 0px;
   top: 0;
 }
 #hornav li ul li:hover > ul {
   top: 0px;
-  left: 200px;
+  left: 0px;
 }
 #hornav ul ul .parent:after {
   top: 10px;

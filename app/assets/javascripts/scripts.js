@@ -2,7 +2,7 @@
 /* Portfolio */
 $(window).load(function() {
     var $cont = $('.portfolio-group');
-    
+
     $cont.isotope({
         itemSelector: '.portfolio-group .portfolio-item',
         masonry: {columnWidth: $('.isotope-item:first').width(), gutterWidth: -20, isFitWidth: true},
@@ -67,10 +67,10 @@ $(document).ready(function(){
 
 // thumbs animations
 $(function () {
-    
+
     $(".thumbs-gallery i").animate({
              opacity: 0
-    
+
           }, {
              duration: 300,
              queue: false
@@ -86,12 +86,12 @@ $(function () {
              queue: false
           });
    });
- 
+
    $(".thumbs-gallery i").hover(
       function () {
           $(this).animate({
              opacity: 0
-    
+
           }, {
              duration: 300,
              queue: false
@@ -114,7 +114,7 @@ $(function () {
         $( "div.slicknav_menu" ).addClass( "hidden-lg" );
     });
 
-// Sticky Div
-  $(window).load(function(){
-    $("#hornav").sticky({ topSpacing: 0 });
-  });
+// // Sticky Div
+//   $(window).load(function(){
+//     $("#hornav").sticky({ topSpacing: 0 });
+//   });
