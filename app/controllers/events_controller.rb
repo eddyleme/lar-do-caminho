@@ -1,24 +1,14 @@
 class EventsController < ApplicationController
   def index
-<<<<<<< HEAD
     @events = Event.all
   end
 
   def show
-    @event = Event.find(params:[:id])
-=======
-    @events = Event.find(:all)
-  end
-
-  def show
     @event = Event.find(params[:id])
->>>>>>> photo_upload
   end
 
   def new
     @event = Event.new
-<<<<<<< HEAD
-=======
   end
 
   def create
@@ -33,7 +23,6 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
->>>>>>> photo_upload
   end
 
   def update

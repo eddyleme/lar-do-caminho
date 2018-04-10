@@ -9,9 +9,6 @@ class PhotosController < ApplicationController
   end
 
   def new
-<<<<<<< HEAD
-    @photos = Photo.new
-=======
     @album = Album.find(params[:album_id])
     @photo = Photo.new
     @photo.album = @album
@@ -23,7 +20,6 @@ class PhotosController < ApplicationController
       @photo = Photo.create(file: photo_file, album: @album)
     end
     redirect_to root_path
->>>>>>> photo_upload
   end
 
   def update
