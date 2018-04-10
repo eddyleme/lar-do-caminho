@@ -9,9 +9,10 @@
 <% end %>
 
 <% if current_admin.present? %>
-	<%= render 'form' , package: @package, event_id: @event_id %>
+	<%= render 'package_form' , package: @package, event_id: @event_id %>
 <% else %>
 <% end %>
+
 <% @event.packages.each do |package| %>
 	<%= render 'ticket_form' , ticket: @ticket, package: package, package_id: package.id%>
 <% end %>

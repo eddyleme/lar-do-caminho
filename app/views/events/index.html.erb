@@ -1,5 +1,13 @@
 <h1>Events#index</h1>
 <p>events/index.html.erb</p>
+
+<% if current_admin.present? %>
+	<%= render 'event_form' , event: @event %>
+<% end %>
+
 <% @events.each do |event| %>
-<%= link_to "#{event.name}", event_path(event) %>
+	<%= link_to "#{event.name}", event_path(event) %>
+	<% if current_admin.present? %>
+		<%= link_to 'Destroy', event, method: :delete, :confirm => "you sure you want to delete?" %>
+	<% end %>
 <% end %>
