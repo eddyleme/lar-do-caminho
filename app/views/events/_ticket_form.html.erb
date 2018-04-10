@@ -1,0 +1,9 @@
+<h3>Buy A <%= package.name %> Ticket</h3>
+	<%= form_with(model: [package, @ticket], local: true) do |form| %>
+		<%= form.text_field :name %>
+	  <%= form.label :name %>
+		<%= form.text_field :email %>
+	  <%= form.label :email %>
+		<%= form.number_field :amount_paid %>
+		<%= form.submit "Purchase Ticket" %>
+	<% end %>
