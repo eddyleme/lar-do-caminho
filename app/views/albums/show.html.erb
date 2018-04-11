@@ -9,11 +9,18 @@
   <%= image_tag @album.cover_photo %>
 </p>
 
-<%= link_to 'Add Photo', new_album_photo_path(@album) %> |
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
-<% @album.photos.each do |photo| %>
-	<p>
-		<%= image_tag photo.file.url %>
-	</p>
+<% if current_admin.present? %>
+	<%= render 'photo_form' , photo: @photo, album_id: @album_id %>
 <% end %>
+
+  <% @album.photos.each do |photo| %>
+    <div>
+      <%= image_tag photo.photo_location.url %>
+      <% if current_admin.present? %>
+        <button>
+          <%= link_to 'Destroy', photo, method: :delete, :confirm => "you sure you want to delete?" %>
+        </button>
+    </div>
+      <% end %>
+  <% end %>
+
