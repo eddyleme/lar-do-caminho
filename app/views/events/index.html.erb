@@ -35,16 +35,27 @@
 <div class="partners">
   <%= image_tag ("event_partners.jpeg") %>
 </div>
-
-
-
+<div>
 <% if current_admin.present? %>
-	<%= render 'event_form' , event: @event %>
+	<%= render 'event_form' , event: @event, method: 'create' %>
 <% end %>
 
-<% @events.each do |event| %>
-	<%= link_to "#{event.name}", event_path(event) %>
-	<% if current_admin.present? %>
-		<%= link_to 'Destroy', event, method: :delete, :confirm => "you sure you want to delete?" %>
+<% unless @events.nil? %>
+	<% @events.each do |event| %>
+		<div>
+			<p>
+		<%= link_to "#{event.name}", event_path(event) %>
+			</p>
+		<%= image_tag event.display_photo.url %>
+		<% if current_admin.present? %>
+			<button>
+			<%= link_to 'Destroy', event, method: :delete, :confirm => "you sure you want to delete?" %>
+			</button>
+		</div>
+		<% end %>
 	<% end %>
 <% end %>
+</div>
+
+
+

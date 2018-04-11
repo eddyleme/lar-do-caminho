@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'carrierwave', '~> 1.0'
-
+gem 'paperclip'
 # Bootstrap framework for frontend
 gem 'bootstrap-sass', '~> 3.3.7'
 # Animate.css, now in Rails form!
@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 
 
-gem 'paypal-ipn', :require => 'paypal'
+
 gem 'httparty'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'

@@ -24,7 +24,7 @@ class EventsController < ApplicationController
         format.html { redirect_to events_path, notice: 'Event was successfully added.' }
         format.json { render :index, status: :created, location: @event }
       else
-        format.html { render :new }
+        format.html { render :index }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
@@ -62,7 +62,7 @@ end
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :date)
+    params.require(:event).permit(:name, :description, :date, :display_photo)
   end
 
   def set_event
