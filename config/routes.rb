@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
 
   get '/login' => 'sessions#new'
+  get '/contact' => 'homes#contact'
   root 'homes#index'
   resource :sessions
 
