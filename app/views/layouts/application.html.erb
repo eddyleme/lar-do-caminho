@@ -111,9 +111,11 @@
     <div class="col-md-12 margin-bottom-5 bottom-border padding-vert-5"></div>
       <!-- info -->
       <div class="row">
-          <div class="col-md-6 text-center pull-left">
+        <div class="col-md-2">
+        </div>
+          <div class="col-md-3 text-center pull-left">
             <h3 class="margin-bottom-10"><strong>LAR DO CAMINHO USA</strong></h3>
-            <p>
+            <p class="text-left">
               <span class="fa-phone">Telephone:</span>&nbsp;<a href="tel:9548675309">954.8675.309</a>
               <br>
               <span class="fa-envelope">Email:</span>
@@ -139,10 +141,14 @@
               < end > -->
             </p>
           </div>
+          <div class="col-md-1">
+          </div>
         <div class="col-md-6 text-center">
-          <div class="col-md-5 text-right">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-3 text-right">
             <div class="clearfix">
-              <ul class="menu">
+              <ul class="list-inline">
                 <li>
                   <a href="#" class="fa fa-home"><%= link_to "Home", root_path %></a>
                 </li>
@@ -155,11 +161,13 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-5 text-right">
+          <div class="col-md-3 text-right">
             <div class="clearfix">
-              <ul class="menu">
+              <ul class="list-inline">
                 <li>
-                  <a href="#portfolio" class="fa fa-picture-o"><%= link_to "Photos", albums_path %></a>
+                  <%= link_to albums_path do %>
+                  <i class="fa fa-picture-o">Photos</i>
+                  <% end %>
                 </li>
                 <li>
                   <a href="#events" class="fa fa-bullhorn"><%= link_to "Events", events_path %></a>
@@ -169,6 +177,8 @@
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="col-md-2">
           </div>
         </div>
       </div>
