@@ -13,89 +13,97 @@
 <body>
   <div id="body-bg">
 
-<!-- Header -->
-<div id="header">
-  <div class="container col-md-0 no-padding">
-    <div class="row">
+    <!-- Header -->
+    <div id="header">
+      <div class="container col-md-0 no-padding">
+        <div class="row">
 
-      <!-- Top Menu -->
-      <div id="hornav" class="bottom-border-shadow padding-vert-5">
-        <div class="container padding-bottom-10">
+          <!-- Top Menu -->
+          <div id="hornav" class="bottom-border-shadow padding-vert-5">
+            <div class="container padding-bottom-10">
 
-          <div class="row">
+              <div class="row">
 
-            <div class="col-md-1 padding-vert-5 pull-right">
-              <ul class="social-icons circle padding-vert-10">
-
-                <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook"> <li> <i class="fa fa-facebook fa-2x">
-                </li></i></a>
-                <a href="http://www.instagram.com/lardocaminhousa" title="Instagram"> <li> <i class="fa fa-instagram fa-2x">
-                </i></li></a>
-
-              </ul>
-            </div>
+                <div class="col-md-3 padding-vert-5 pull-right">
+                  <ul class="social-icons rounded padding-vert-10">
+                    <div class="col-md-1 text-center">
+                      <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook">
+                        <li>
+                          <i class="fa fa-facebook fa-2x"></i>
+                        </li>
+                      </a>
+                    </div>
+                    <div class="col-md-1 text-center">
+                      <a href="http://www.instagram.com/lardocaminhousa" title="Instagram">
+                        <li>
+                          <i class="fa fa-instagram fa-2x"></i>
+                        </li>
+                      </a>
+                    </div>
+                  </ul>
+                </div>
             <%= image_tag "favicon", class: "ldclogo", alt: "Logo" %>
-            <div class="col-md-10 no-padding pull-right">
+                <div class="col-md-7 no-padding pull-right">
 
-              <div class="visible-lg">
-                <ul id="hornavmenu" class="nav navbar-nav pull-right">
-                  <li>
-                    <!-- < if current_user > -->
-                    <!-- Signed in as <= current_user.username >. -->
+                  <div class="visible-lg">
+                    <ul id="hornavmenu" class="nav navbar-nav pull-right">
+                      <li>
+                        <!-- < if current_user > -->
+                        <!-- Signed in as <= current_user.username >. -->
 
-                    <!-- <= link_to "Log out", sessions_path("current"), :method => :delete > -->
+                        <!-- <= link_to "Log out", sessions_path("current"), :method => :delete > -->
 
-                    <a href="#" class="fa fa-sign-out"></i>Log out</a>
-                    <!-- < else >
-                    < end > -->
-                  </li>
-                  <li>
-                    <a href="#" class="fa fa-home">Home</a>
-                  </li>
-                  <li>
-                    <a href="#aboutus" class="fa fa-info-circle">About</a>
-                    <ul>
+                        <!-- <a href="#" class="fa fa-sign-out"></i>Log out</a> -->
+                        <!-- < else >
+                        < end > -->
+                      </li>
+                      <li>
+                        <a href="#" class="fa fa-home">Home</a>
+                      </li>
+                      <li>
+                        <a href="#aboutus" class="fa fa-info-circle">About</a>
+                        <ul>
 
-                      <li class="background-gray-light">
+                          <li class="background-gray-light">
 
-                        <a href="#ourteam" class="fa fa-users"></i>Our Team</a>
+                            <a href="#ourteam" class="fa fa-users"></i>Our Team</a>
+
+                          </li>
+
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#portfolio" class="fa fa-picture-o">Gallery</a>
+                      </li>
+
+                      <li>
+                        <a href="#events" class="fa fa-bullhorn">Events</a>
+                      </li>
+
+                      <li>
+                        <a href="#donate" class="fa fa-gift">Donate</a>
 
                       </li>
 
                     </ul>
-                  </li>
+                  </div>
+                </div>
 
-                  <li>
-                    <a href="#portfolio" class="fa fa-picture-o">Gallery</a>
-                  </li>
-
-                  <li>
-                    <a href="#events" class="fa fa-bullhorn">Events</a>
-                  </li>
-
-                  <li>
-                    <a href="#donate" class="fa fa-gift">Donate</a>
-
-                  </li>
-
-                </ul>
               </div>
+
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- End Header -->
+    <!-- End Header -->
 
 
   <!-- Main -->
-  <div class="main">
+  <!-- <div class="main"> -->
     <%= yield %>
-  </div>
+  <!-- </div> -->
   <!-- End Main -->
 
   <!-- Footer -->
@@ -103,9 +111,11 @@
     <div class="col-md-12 margin-bottom-5 bottom-border padding-vert-5"></div>
       <!-- info -->
       <div class="row">
-          <div class="col-md-6 text-center pull-left">
+        <div class="col-md-2">
+        </div>
+          <div class="col-md-3 text-center pull-left">
             <h3 class="margin-bottom-10"><strong>LAR DO CAMINHO USA</strong></h3>
-            <p>
+            <p class="text-left">
               <span class="fa-phone">Telephone:</span>&nbsp;<a href="tel:9548675309">954.8675.309</a>
               <br>
               <span class="fa-envelope">Email:</span>
@@ -131,10 +141,14 @@
               < end > -->
             </p>
           </div>
+          <div class="col-md-1">
+          </div>
         <div class="col-md-6 text-center">
-          <div class="col-md-5 text-right">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-3 text-right">
             <div class="clearfix">
-              <ul class="menu">
+              <ul class="list-inline">
                 <li>
                   <a href="#" class="fa fa-home"><%= link_to "Home", root_path %></a>
                 </li>
@@ -147,11 +161,13 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-5 text-right">
+          <div class="col-md-3 text-right">
             <div class="clearfix">
-              <ul class="menu">
+              <ul class="list-inline">
                 <li>
-                  <a href="#portfolio" class="fa fa-picture-o"><%= link_to "Photos", albums_path %></a>
+                  <%= link_to albums_path do %>
+                  <i class="fa fa-picture-o">Photos</i>
+                  <% end %>
                 </li>
                 <li>
                   <a href="#events" class="fa fa-bullhorn"><%= link_to "Events", events_path %></a>
@@ -161,6 +177,8 @@
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="col-md-2">
           </div>
         </div>
       </div>
