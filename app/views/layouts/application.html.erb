@@ -1,14 +1,205 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ldc</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Lar-Do-Caminho</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+
+<body>
+  <div id="body-bg">
+
+    <!-- Header -->
+    <div id="header">
+      <div class="container col-md-0 no-padding">
+        <div class="row">
+
+          <!-- Top Menu -->
+          <div id="hornav" class="bottom-border-shadow padding-vert-5">
+            <div class="container padding-bottom-10">
+
+              <div class="row">
+
+                <div class="col-md-3 padding-vert-5 pull-right">
+                  <ul class="social-icons rounded padding-vert-10">
+                    <div class="col-md-1 text-center">
+                      <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook">
+                        <li>
+                          <i class="fa fa-facebook fa-2x"></i>
+                        </li>
+                      </a>
+                    </div>
+                    <div class="col-md-1 text-center">
+                      <a href="http://www.instagram.com/lardocaminhousa" title="Instagram">
+                        <li>
+                          <i class="fa fa-instagram fa-2x"></i>
+                        </li>
+                      </a>
+                    </div>
+                  </ul>
+                </div>
+            <%= image_tag "favicon", class: "ldclogo", alt: "Logo" %>
+                <div class="col-md-7 no-padding pull-right">
+
+                  <div class="visible-lg">
+                    <ul id="hornavmenu" class="nav navbar-nav pull-right">
+                      <li>
+                        <!-- < if current_user > -->
+                        <!-- Signed in as <= current_user.username >. -->
+
+                        <!-- <= link_to "Log out", sessions_path("current"), :method => :delete > -->
+
+                        <!-- <a href="#" class="fa fa-sign-out"></i>Log out</a> -->
+                        <!-- < else >
+                        < end > -->
+                      </li>
+                      <li>
+                        <a href="#" class="fa fa-home">Home</a>
+                      </li>
+                      <li>
+                        <a href="#aboutus" class="fa fa-info-circle">About</a>
+                        <ul>
+
+                          <li class="background-gray-light">
+
+                            <a href="#ourteam" class="fa fa-users"></i>Our Team</a>
+
+                          </li>
+
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#portfolio" class="fa fa-picture-o">Gallery</a>
+                      </li>
+
+                      <li>
+                        <a href="#events" class="fa fa-bullhorn">Events</a>
+                      </li>
+
+                      <li>
+                        <a href="#donate" class="fa fa-gift">Donate</a>
+
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Header -->
+
+
+  <!-- Main -->
+  <!-- <div class="main"> -->
     <%= yield %>
-  </body>
-</html>
+  <!-- </div> -->
+  <!-- End Main -->
+
+  <!-- Footer -->
+  <div id="base">
+    <div class="col-md-12 margin-bottom-5 bottom-border padding-vert-5"></div>
+      <!-- info -->
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+          <div class="col-md-3 text-center pull-left">
+            <h3 class="margin-bottom-10"><strong>LAR DO CAMINHO USA</strong></h3>
+            <p class="text-left">
+              <span class="fa-phone">Telephone:</span>&nbsp;<a href="tel:9548675309">954.867.5309</a>
+              <br>
+              <span class="fa-envelope">Email:</span>
+              <a href="mailto:admin@lardocaminhousa.org">admin@lardocaminhousa.org</a>
+              <br>
+              <span class="fa-link">Website:</span>
+              <a href="http://www.lardocaminhousa.org/">www.lardocaminhousa.org</a>
+              <br>
+              <!-- < if current_user > -->
+              <!-- Signed in as <= current_user.username >. -->
+
+              <!-- <= link_to "Log out", sessions_path("current"), :method => :delete > -->
+
+              <a href="#">
+                <i class="fa fa-sign-out"></i>
+                <% if current_admin.present? %>
+          	  	  <%= link_to "Logout", logout_path %>
+                <% else %>
+                  <%= link_to "Login", login_path %>
+          	    <% end %>
+              </a>
+              <!-- < else >
+              < end > -->
+            </p>
+          </div>
+          <div class="col-md-1">
+          </div>
+        <div class="col-md-6 text-center">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-3 text-right">
+            <div class="clearfix">
+              <ul class="list-inline">
+                <li>
+                  <a href="#" class="fa fa-home"><%= link_to "Home", root_path %></a>
+                </li>
+                <li>
+                  <a href="#aboutus" class="fa fa-info-circle">About</a>
+                </li>
+                <li>
+                  <a href="#ourteam" class="fa fa-users"></i>Our Team</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 text-right">
+            <div class="clearfix">
+              <ul class="list-inline">
+                <li>
+                  <%= link_to albums_path do %>
+                  <i class="fa fa-picture-o">Photos</i>
+                  <% end %>
+                </li>
+                <li>
+                  <a href="#events" class="fa fa-bullhorn"><%= link_to "Events", events_path %></a>
+                </li>
+                <li>
+                  <a href="#donate" class="fa fa-gift">Donate</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer" class="background-grey">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Menu -->
+          <div id="footermenu" class="col-md-8">
+            <p class="pull-left">&copy; Lar-Do-Caminho All rights reserved.</p>
+          </div>
+          <!-- End Footer Menu -->
+
+          <div id="copyright" class="col-md-4">
+            <p class="pull-right">
+              Design: <a href="https://github.com/eddyleme/lar-do-caminho">Wyncoders</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+    </html>

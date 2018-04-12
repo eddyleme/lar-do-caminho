@@ -6,11 +6,24 @@ class AlbumsController < ApplicationController
   end
 
   def show
-
+    @photo = Photo.new
   end
 
   def new
     @album = Album.new
+  end
+
+  def create
+    @album = Album.new(album_params)
+    respond_to do |format|
+      if @album.save
+        format.html { redirect_to albums_path, notice: 'Photo album was successfully created.' }
+        format.json { render :show, status: :created, location: albums_path }
+      else
+        format.html { render :new }
+        format.json { render json: @album.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
@@ -25,18 +38,6 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def create
-    @album = Album.new(album_params)
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to @album, notice: 'Photo album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   def destroy
     @album.destroy

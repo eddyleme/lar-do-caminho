@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_album, only: [:destroy]
   def index
     @photos = Photo.all
   end
@@ -9,9 +10,6 @@ class PhotosController < ApplicationController
   end
 
   def new
-<<<<<<< HEAD
-    @photos = Photo.new
-=======
     @album = Album.find(params[:album_id])
     @photo = Photo.new
     @photo.album = @album
@@ -19,11 +17,10 @@ class PhotosController < ApplicationController
 
   def create
     @album = Album.find(params[:album_id])
-    photo_params[:file].each do |photo_file|
-      @photo = Photo.create(file: photo_file, album: @album)
+    photo_params[:photo_location].each do |photo_file_location|
+      @photo = Photo.create(photo_location: photo_file_location, album: @album)
     end
-    redirect_to root_path
->>>>>>> photo_upload
+    redirect_to album_path(@album)
   end
 
   def update
@@ -40,7 +37,7 @@ class PhotosController < ApplicationController
   def destroy
   @photo.destroy
   respond_to do |format|
-    format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
+    format.html { redirect_to album_path(@album), notice: 'Photo was successfully destroyed.' }
     format.json { head :no_content }
   end
 end
@@ -51,8 +48,12 @@ private
     @photo = Photo.find(params[:id])
   end
 
+  def set_album
+    @album = Album.find(@photo.album_id)
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def photo_params
-    params.require(:photo).permit(file: [])
+    params.require(:photo).permit(photo_location: [])
   end
 end

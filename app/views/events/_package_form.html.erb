@@ -1,0 +1,9 @@
+<%= form_with(model: [@event, @package], local: true) do |form| %>
+	<%= form.text_field :name %>
+  <%= form.label :name %>
+  <%= form.text_area :description %>
+  <%= form.label :description %>
+  <%= form.number_field :price %>
+  <%= form.label :price %>
+ <%= form.submit "Create New Package" %>
+<% end %>
