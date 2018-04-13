@@ -16,13 +16,32 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = @package.tickets.build(ticket_params)
-    respond_to do |format|
-      if @ticket.save!
-        format.html { redirect_to event_path(@event.id), notice: 'Ticket was successfully booked' }
-        format.json { render :show, status: :created, location: @ticket }
-      # else
-      #   format.html { render :new }
-      #   format.json { render json: @ticket.errors, status: :unprocessable_entity }
+
+    customer = Stripe::Customer.create(
+      :email => params[:stripeEmail],
+      :source  => params[:stripeToken]
+    )
+
+    begin
+      charge = Stripe::Charge.create(
+        :customer    => customer.id,
+        :amount      => @package.price,
+        :description => @package.name,
+        :currency    => 'usd'
+      )
+      respond_to do |format|
+        if @ticket.save!
+          format.html { redirect_to event_path(@event.id), notice: 'Ticket was successfully booked' }
+          format.json { render :show, status: :created, location: @ticket }
+        else
+          format.html { render :new }
+          format.json { render json: @ticket.errors, status: :unprocessable_entity }
+        end
+      end
+    rescue Stripe::CardError => e
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,7 +61,14 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:name, :email)
+    x = params.require(:ticket).permit(:package_id)
+    {
+      package_id: x[:package_id],
+      name: params[:stripeBillingName],
+      email: params[:stripeEmail],
+      token_id: params[:stripeToken],
+      amount_paid: @package.price
+    }
   end
 
   def set_package
