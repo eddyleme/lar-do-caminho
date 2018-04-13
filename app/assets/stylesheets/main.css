@@ -232,6 +232,7 @@ p.site-slogan {
 }
 
 .image-text-centered {
+  position:absolute;
     font-size: 35px;
     top: 50%;
     left: 50%;
@@ -258,6 +259,8 @@ p.site-slogan {
 .abso{
   position:absolute;
 }
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Utility Classes */
@@ -388,6 +391,26 @@ p.site-slogan {
 .color-white[class*=" fa-"]:before {
   color: #FFFFFF;
 }
+
+.radius-5 {
+  border-radius: 5;
+}
+.radius-10 {
+  border-radius: 10;
+}
+.radius-15 {
+  border-radius:15;
+}
+.radius-20 {
+  border-radius:20;
+}
+.radius-25 {
+  border-radius:25;
+}
+.radius-30 {
+  border-radius:30;
+}
+
 .padding-10 {
   padding: 10px;
 }
@@ -807,6 +830,7 @@ p.site-slogan {
   letter-spacing: 1px;
   line-height: normal;
   padding: 19px 16px 20px;
+  border-radius: 10px;
   text-transform: uppercase;
   display: block;
 }
