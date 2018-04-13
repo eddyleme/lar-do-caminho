@@ -16,7 +16,7 @@ gem 'jquery-rails'
 # Font Awesome. Awesome.
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 
-
+gem 'stripe'
 
 gem 'httparty'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

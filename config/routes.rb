@@ -1,27 +1,29 @@
 Rails.application.routes.draw do
-  get 'carts/show'
+  root 'homes#index'
+
+  # get 'carts/show'
+  resources :charges
+
   get 'albums/index'
-    resources :albums do
-      resources :photos, shallow: true
-    end
+  resources :albums do
+    resources :photos, shallow: true
+  end
+  
 
   get '/login' => 'sessions#new'
   get '/contact' => 'homes#contact'
-  root 'homes#index'
+
   resource :sessions
-
-	delete '/logout' => 'sessions#destroy'
-	get '/logout' => 'sessions#destroy'
-
 	resources :password_resets, only: [:new, :create, :edit, :update]
+
+  delete '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
+
+
 	resources :events, shallow: true do
 		resources :packages do
 			resources :tickets
 		end
 	end
-
-
-
-
 
 end
