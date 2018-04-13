@@ -10,22 +10,22 @@
 </head>
 
 
-<body>
+<body class="bg">
   <div id="body-bg">
 
     <!-- Header -->
     <div id="header">
       <div class="container col-md-0 no-padding">
-        <div class="row">
+        <div class="row drop-shadow">
 
           <!-- Top Menu -->
-          <div id="hornav" class="bottom-border-shadow padding-vert-5">
-            <div class="container padding-bottom-10">
+          <div id="hornav" class="bottom-border-shadow padding-vert-5 ">
+            <div class="container padding-bottom-10 ">
 
-              <div class="row">
+              <div class="row ">
 
-                <div class="col-md-3 padding-vert-5 pull-right">
-                  <ul class="social-icons rounded padding-vert-10">
+                <div class="col-md-3 padding-vert-5 pull-right ">
+                  <ul class="social-icons circle padding-vert-10">
                     <div class="col-md-1 text-center">
                       <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook">
                         <li>
@@ -46,7 +46,7 @@
                 <div class="col-md-7 no-padding pull-right">
 
                   <div class="visible-lg">
-                    <ul id="hornavmenu" class="nav navbar-nav pull-right">
+                    <ul id="hornavmenu" class="nav navbar-nav pull-right drop-shadow">
                       <li>
                         <!-- < if current_user > -->
                         <!-- Signed in as <= current_user.username >. -->
@@ -58,15 +58,15 @@
                         < end > -->
                       </li>
                       <li>
-                        <a href="#" class="fa fa-home">Home</a>
+                        <a href="#" class="drop-shadow fa fa-home">Home</a>
                       </li>
                       <li>
-                        <a href="#aboutus" class="fa fa-info-circle">About</a>
+                        <a href="#aboutus" class="drop-shadow fa fa-info-circle">About</a>
                         <ul>
 
-                          <li class="background-gray-light">
+                          <li class="drop-shadow background-gray-light">
 
-                            <a href="#ourteam" class="fa fa-users"></i>Our Team</a>
+                            <a href="#ourteam" class="drop-shadow fa fa-users"></i>Our Team</a>
 
                           </li>
 
@@ -74,15 +74,15 @@
                       </li>
 
                       <li>
-                        <a href="#portfolio" class="fa fa-picture-o">Gallery</a>
+                        <a href="#portfolio" class="drop-shadow fa fa-picture-o">Gallery</a>
                       </li>
 
                       <li>
-                        <a href="#events" class="fa fa-bullhorn">Events</a>
+                        <a href="#events" class="drop-shadow fa fa-bullhorn">Events</a>
                       </li>
 
                       <li>
-                        <a href="#donate" class="fa fa-gift">Donate</a>
+                        <a href="#donate" class="drop-shadow fa fa-gift">Donate</a>
 
                       </li>
 
@@ -97,16 +97,19 @@
         </div>
       </div>
     </div>
+<!-- <body> -->
     <!-- End Header -->
 
 
   <!-- Main -->
-  <!-- <div class="main"> -->
+  <div class="mainarea bg">
     <%= yield %>
-  <!-- </div> -->
+    <div class="push"></div>
+  </div>
   <!-- End Main -->
 
   <!-- Footer -->
+<!-- </body> -->
   <div id="base">
     <div class="col-md-12 margin-bottom-5 bottom-border padding-vert-5"></div>
       <!-- info -->
@@ -146,11 +149,13 @@
         <div class="col-md-6 text-center">
           <div class="col-md-2">
           </div>
-          <div class="col-md-3 text-right">
-            <div class="clearfix">
+          <div class="col-md-2 text-right">
+            <div class="">
               <ul class="list-inline">
                 <li>
-                  <a href="#" class="fa fa-home"><%= link_to "Home", root_path %></a>
+                  <%= link_to root_path do %>
+                  <i class="fa fa-home">Home</i>
+                  <% end %>
                 </li>
                 <li>
                   <a href="#aboutus" class="fa fa-info-circle">About</a>
@@ -161,16 +166,18 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-3 text-right">
-            <div class="clearfix">
+          <div class="col-md-2 text-right">
+            <div class="">
               <ul class="list-inline">
                 <li>
                   <%= link_to albums_path do %>
-                  <i class="fa fa-picture-o">Photos</i>
+                  <i class="fa fa-picture-o"></i>Photos
                   <% end %>
                 </li>
                 <li>
-                  <a href="#events" class="fa fa-bullhorn"><%= link_to "Events", events_path %></a>
+                  <%= link_to events_path do %>
+                  <i class="fa fa-bullhorn"></i>events
+                  <% end %>
                 </li>
                 <li>
                   <a href="#donate" class="fa fa-gift">Donate</a>
@@ -201,5 +208,5 @@
         </div>
       </div>
     </div>
-    </body>
+  </body>
     </html>
