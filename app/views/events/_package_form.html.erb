@@ -1,3 +1,4 @@
+<div class="background-white well well-lg drop-shadow margin-30">
 <%= form_with(model: [@event, @package], local: true) do |form| %>
 	<%= form.text_field :name %>
   <%= form.label :name %>
@@ -7,3 +8,4 @@
   <%= form.label :price %>
  <%= form.submit "Create New Package" %>
 <% end %>
+</div>

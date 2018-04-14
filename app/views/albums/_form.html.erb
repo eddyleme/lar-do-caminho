@@ -1,3 +1,5 @@
+<div class="background-white well well-lg drop-shadow margin-30">
+
 <%= form_with(model: album, local: true) do |form| %>
   <% if album.errors.any? %>
     <div id="error_explanation">
@@ -25,3 +27,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
