@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :albums do
       resources :photos, shallow: true
     end
-
+  get '/donate' => 'homes#donate'
   get '/login' => 'sessions#new'
   get '/contact' => 'homes#contact'
   root 'homes#index'
