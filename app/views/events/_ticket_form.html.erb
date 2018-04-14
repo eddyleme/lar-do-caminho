@@ -1,3 +1,4 @@
+<div class="background-white col-md-8 well well-lg drop-shadow margin-30">
 <h3>Buy A <%= package.name %> Ticket</h3>
 	<%= form_with(model: [package, @ticket], local: true) do |form| %>
 		<%= form.text_field :name %>
@@ -7,3 +8,4 @@
 		<%= form.number_field :amount_paid %>
 		<%= form.submit "Purchase Ticket" %>
 	<% end %>
+</div>

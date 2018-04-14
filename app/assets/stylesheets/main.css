@@ -249,7 +249,7 @@ p.site-slogan {
 }
 .pic-to-top {
 
-  height: 350px;
+  height: 100%;
 }
 
 .drop-shadow {
@@ -861,7 +861,7 @@ p.site-slogan {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   display: block;
   list-style: none;
-  margin: 10px;
+  margin: 3px;
   padding: 5px 0px !important;
   min-width: 200px;
   z-index: 30;

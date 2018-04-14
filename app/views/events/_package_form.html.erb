@@ -1,9 +1,22 @@
+<div class="col-md-8 background-white well well-lg text-center drop-shadow margin-30">
 <%= form_with(model: [@event, @package], local: true) do |form| %>
-	<%= form.text_field :name %>
-  <%= form.label :name %>
-  <%= form.text_area :description %>
-  <%= form.label :description %>
-  <%= form.number_field :price %>
-  <%= form.label :price %>
- <%= form.submit "Create New Package" %>
+
+<div class="input-group ">
+	<span class="input-group-addon" id="basic-addon1"><%= form.label :name %></span>
+	<%= form.text_field :name, type: "text", class: "form-control", placeholder: "Package Name" %>
+</div>
+
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon2"><%= form.label :description %></span>
+<%= form.text_area :description, type: "text", class: "form-control", placeholder: "Package Description" %>
+</div>
+
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon2"><%= form.label :price %></span>
+<%= form.number_field :price, type: "number_field", class: "form-control", placeholder: "Price (in cents only)" %>
+<span class="input-group-addon" id="basic-addon2">1000 = $10.00</span>
+</div>
+
+<%= form.submit "Create New Package" %>
 <% end %>
+</div>

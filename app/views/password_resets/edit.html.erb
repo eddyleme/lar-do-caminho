@@ -1,7 +1,8 @@
+<div class="container">
+  <div class="text-center well-lg background-white margin-top-50 drop-shadow">
+
 <h1>Reset password</h1>
 
-<div>
-  <div>
     <%= form_for(@admin, url: password_reset_path(params[:id])) do |f| %>
       <%#= render 'shared/error_messages' %>
 
