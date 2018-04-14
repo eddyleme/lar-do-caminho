@@ -1,8 +1,7 @@
-<div class="background-white well well-lg drop-shadow margin-30">
-
+<div class="background-gray well well-lg text-center drop-shadow margin-30">
 <%= form_with(model: event, local: true) do |form| %>
 
-	<div class="input-group">
+	<div class="input-group ">
 		<span class="input-group-addon" id="basic-addon1"><%= form.label :name %></span>
 		<%= form.text_field :name, type: "text", class: "form-control", placeholder: "Event Name" %>
 	</div>
@@ -14,7 +13,7 @@
 
 	<div class="input-group">
 		<span class="input-group-addon"><%= form.label :date %></span>
-		<%= form.text_field :date, type: "text", class: "form-control", label: "Amount (to the nearest dollar)" %>
+		<%= form.text_field :date, type: "text", class: "form-control", placeholder: "MM/DD/YYYY" %>
 	</div>
 
 	<div class="input-group">
@@ -22,6 +21,6 @@
 		<%= form.file_field :display_photo, class: "form-control", id: "Upload Photo" %>
 	</div>
  <%= form.submit "Create New Event" %>
-<% end %>
 
+<% end %>
 </div>
