@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408035906) do
+ActiveRecord::Schema.define(version: 20180413204840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 20180408035906) do
     t.bigint "package_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "token_id"
+    t.string "transaction_id"
     t.index ["package_id"], name: "index_tickets_on_package_id"
   end
 

@@ -1,11 +1,15 @@
 <div class="background-white col-md-8 well well-lg drop-shadow margin-30">
 <h3>Buy A <%= package.name %> Ticket</h3>
-	<%= form_with(model: [package, @ticket], local: true) do |form| %>
-		<%= form.text_field :name %>
-	  <%= form.label :name %>
-		<%= form.text_field :email %>
-	  <%= form.label :email %>
-		<%= form.number_field :amount_paid %>
-		<%= form.submit "Purchase Ticket" %>
+	<%= form_with(model: [package, @ticket], local: true, id: "ticket-form") do |form| %>
+		<%= form.hidden_field :package_id, value: package.id %>
+		<script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_uVfqwQnuzdbmMbLLDUlRFtH7"
+	    data-amount="<%= package.price %>"
+	    data-name="Demo Site"
+	    data-description="Widget"
+	    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+	    data-billing-address="true"
+	    data-locale="auto">
+	  </script>
 	<% end %>
-</div>
