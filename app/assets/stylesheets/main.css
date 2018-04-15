@@ -81,6 +81,26 @@ body {
 .push {
   margin-bottom: 199px;
 }
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+.background-grey-tint {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
 /*-----------------------------------------------------------------------------------*/
 /* Header */
 /*-----------------------------------------------------------------------------------*/
@@ -260,7 +280,9 @@ p.site-slogan {
   position:absolute;
 }
 
-
+.well {
+  border: 0px !important;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Utility Classes */
@@ -393,22 +415,22 @@ p.site-slogan {
 }
 
 .radius-5 {
-  border-radius: 5;
+  border-radius: 5px;
 }
 .radius-10 {
-  border-radius: 10;
+  border-radius: 10px;
 }
 .radius-15 {
-  border-radius:15;
+  border-radius:15px;
 }
 .radius-20 {
-  border-radius:20;
+  border-radius:20px;
 }
 .radius-25 {
-  border-radius:25;
+  border-radius:25px;
 }
 .radius-30 {
-  border-radius:30;
+  border-radius:30px;
 }
 
 .padding-10 {
@@ -428,6 +450,9 @@ p.site-slogan {
 }
 .padding-60 {
   padding: 60px;
+}
+.margin-5 {
+  margin: 5px;
 }
 .margin-10 {
   margin: 10px;

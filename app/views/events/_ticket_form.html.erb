@@ -1,15 +1,30 @@
-<div class="background-white col-md-8 well well-lg drop-shadow margin-30">
-<h3>Buy A <%= package.name %> Ticket</h3>
-	<%= form_with(model: [package, @ticket], local: true, id: "ticket-form") do |form| %>
-		<%= form.hidden_field :package_id, value: package.id %>
+
+
+
+
+<div class="background-white col-xs-3 well-sm color-default col-centered drop-shadow margin-5 radius-25">
+
+		<h3>Buy a <%= package.name %> Ticket</h3>
+		<%= form_with(model: [package, @ticket], local: true, id: "ticket-form") do |form| %>
+			<%= form.hidden_field :package_id, value: package.id %>
+		<p>
+			This package includes:<br>
+				<div class="padding-10">
+					<%= package.description %>
+				</div>
+				<br>
+				Yours for only: $<%= "%.2f" % (package.price*0.01) %><br>
+		</p>
+
 		<script
-	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-	    data-key="pk_test_uVfqwQnuzdbmMbLLDUlRFtH7"
-	    data-amount="<%= package.price %>"
-	    data-name="Demo Site"
-	    data-description="Widget"
-	    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-	    data-billing-address="true"
-	    data-locale="auto">
-	  </script>
+			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			data-key="pk_test_uVfqwQnuzdbmMbLLDUlRFtH7"
+			data-amount="<%= package.price %>"
+			data-name="Demo Site"
+			data-description="Widget"
+			data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+			data-billing-address="true"
+			data-locale="auto">
+		</script>
 	<% end %>
+	</div>

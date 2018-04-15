@@ -1,8 +1,8 @@
-<div class="background-white well well-lg drop-shadow margin-30">
+<div class="text-center well-lg background-white margin-vert-20 drop-shadow radius-25">
 
 <%= form_with(model: album, local: true) do |form| %>
   <% if album.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="text-center well-lg background-white margin-vert-20 drop-shadow radius-25">
       <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
 
       <ul>
@@ -12,19 +12,18 @@
       </ul>
     </div>
   <% end %>
+    <div class="input-group">
+  		<span class="input-group-addon" id="basic-addon1"><%= form.label :album_title %></span>
+  		<%= form.text_field :album_title, id: :album_title, type: "text", class: "form-control", placeholder: "Album Title" %>
+  	</div>
 
-  <div class="field">
-    <%= form.label :album_title %>
-    <%= form.text_field :album_title, id: :album_title %>
-  </div>
+  	<div class="input-group">
+  		<span class="input-group-addon" id="basic-addon3"><strong><%= form.label :cover_photo %></strong></span>
+  		<%= form.file_field :cover_photo, id: :album_cover_cover, class: "form-control", placeholder: "Upload Photo" %>
 
-  <div class="field">
-    <%= form.label :cover_photo %>
-    <%= form.file_field :cover_photo, id: :album_cover_cover %>
-  </div>
+  	</div>
+  <%= form.submit %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
 <% end %>
 </div>

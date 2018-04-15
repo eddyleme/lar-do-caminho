@@ -18,34 +18,36 @@
     <!-- Header -->
     <div id="header">
       <div class="container col-md-0 padding-10 drop-shadow">
-        <div class="row ">
+        <div class="row radius-25">
 
           <!-- Top Menu -->
-          <div id="hornav" class="drop-shadow">
+          <div id="hornav" class="drop-shadow radius-25">
             <div class="container padding-bottom-5">
 
               <div class="row">
 
-                <div class="col-md-2 padding-vert-5 pull-right ">
-                  <ul class="social-icons circle padding-vert-10">
-                    <div class="col-md-1 text-center">
+                <div class="pull-right">
+                  <ul class="social-icons circle row-centered padding-vert-10">
+                    <div class="col-md-1 col-centered">
                       <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook">
                         <li>
                           <i class="fa fa-facebook fa fa-2x"></i>
                         </li>
                       </a>
                     </div>
-                    <div class="col-md-1 text-center">
+                    <div class="col-md-1 col-centered">
                       <a href="http://www.instagram.com/lardocaminhousa" title="Instagram">
-                        <li>
+                        <li class="">
                           <i class="fa fa-instagram fa fa-2x"></i>
                         </li>
                       </a>
                     </div>
                   </ul>
                 </div>
-            <%= image_tag "favicon", class: "ldclogo", alt: "Logo" %>
-                <div class="col-md-8 no-padding pull-right">
+                <%= link_to root_path, class:"drop-shadow" do %>
+            <%= image_tag "favicon", class: "ldclogo drop-shadow margin-bottom-5 radius-15", alt: "Logo" %>
+            <% end %>
+                <div class="col-md-8 no-padding pull-right ">
 
                   <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav pull-right drop-shadow">
@@ -61,20 +63,20 @@
                       </li>
                       <li>
                         <%= link_to'About', root_path(:anchor => "aboutus"), class:"drop-shadow fa fa-info-circle"%>
-                        <ul>
-                          <li class="drop-shadow background-gray-light">
+                        <ul class="drop-shadow ">
+                          <li class="background-gray-light">
                             <%= link_to'Our Team', root_path(:anchor => "ourteam"), class:"drop-shadow fa fa-users"%>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <%= link_to'Gallery', root_path(:anchor => "portfolio"), class:"drop-shadow fa fa-picture-o"%>
+                        <%= link_to'Gallery', albums_path(), class:"drop-shadow fa fa-picture-o"%>
                       </li>
                       <li>
                         <%= link_to'Events', events_path, class:"drop-shadow fa fa-bullhorn"%>
                       </li>
                       <li>
-                        <%= link_to'Donate', root_path(:anchor => "portfolio"), class:"drop-shadow fa fa-gift"%>
+                        <%= link_to'Donate', donate_path(), class:"drop-shadow fa fa-gift"%>
                       </li>
 
 
@@ -115,7 +117,7 @@
           <div class="col-md-3 pull-left">
             <h3 class="margin-bottom-10"><strong>LAR DO CAMINHO USA</strong></h3>
             <p class="text-left">
-              <span class="fa fa-phone">Telephone:</span>&nbsp;<a href="tel:9548675309">954.867.5309</a>
+              <span class="fa fa-phone">Telephone:</span>&nbsp;<a href="tel:3052050077">+1.305.205.0077</a>
               <br>
               <span class="fa fa-envelope">Email:</span>
               <a href="mailto:admin@lardocaminhousa.org">admin@lardocaminhousa.org</a>
@@ -147,27 +149,27 @@
           </div>
           <div class="col-md-3 text-right">
               <ul class="list-inline">
-                <li class="margin-10 drop-shadow">
+                <li class="margin-10 drop-shadow radius-15">
                     <%= link_to'Home', root_path, class:"drop-shadow fa fa-home"%>
                   </li>
-                  <li class="margin-10 drop-shadow">
+                  <li class="margin-10 drop-shadow radius-15">
                     <%= link_to'About', root_path(:anchor => "aboutus"), class:"drop-shadow fa fa-info-circle"%>
                   </li>
-                  <li class="margin-10 drop-shadow">
+                  <li class="margin-10 drop-shadow radius-15">
                     <%= link_to'Our Team', root_path(:anchor => "ourteam"), class:"drop-shadow fa fa-users"%>
                   </li>
               </ul>
           </div>
           <div class="col-md-3 text-right">
               <ul class="list-inline">
-                  <li class="margin-10 drop-shadow">
-                    <%= link_to'Gallery', root_path(:anchor => "portfolio"), class:"drop-shadow fa fa-picture-o"%>
+                  <li class="margin-10 drop-shadow radius-15">
+                    <%= link_to'Gallery', albums_path(), class:"drop-shadow fa fa-picture-o"%>
                   </li>
-                  <li class="margin-10 drop-shadow">
+                  <li class="margin-10 drop-shadow radius-15">
                     <%= link_to'Events', events_path, class:"drop-shadow fa fa-bullhorn"%>
                   </li>
-                  <li class="margin-10 drop-shadow">
-                    <%= link_to'Donate', root_path(:anchor => "portfolio"), class:"drop-shadow fa fa-gift"%>
+                  <li class="margin-10 drop-shadow radius-15">
+                    <%= link_to'Donate', donate_path(), class:"drop-shadow fa fa-gift"%>
                   </li>
               </ul>
           </div>
@@ -177,7 +179,7 @@
       </div>
     </div>
 
-    <div id="footer" class="background-grey">
+    <div id="footer" class="background-grey-tint">
       <div class="container">
         <div class="row">
           <!-- Footer Menu -->
@@ -196,8 +198,8 @@
     </div>
   </body>
 
-  <script>
+  <!-- <script>
   	var scroll = new SmoothScroll('a[href*="#"]');
-  </script>
+  </script> -->
 
     </html>

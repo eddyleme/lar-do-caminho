@@ -1,4 +1,4 @@
-<div class="col-md-8 background-white well well-lg text-center drop-shadow margin-30">
+<div class="col-md-5 background-white well well-lg text-center drop-shadow radius-25">
 <%= form_with(model: [@event, @package], local: true) do |form| %>
 
 <div class="input-group ">
@@ -17,6 +17,6 @@
 <span class="input-group-addon" id="basic-addon2">1000 = $10.00</span>
 </div>
 
-<%= form.submit "Create New Package" %>
+<%= form.submit "Create New Package", class: "drop-shadow background-grey-tint" %>
 <% end %>
 </div>

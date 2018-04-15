@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="text-center well-lg background-white margin-top-50 drop-shadow">
+  <div class="text-center well-lg background-white margin-top-50 drop-shadow radius-25">
 
 <p id="notice"><%= notice %></p>
 <p>
@@ -17,12 +17,15 @@
 <% end %>
 
   <% @album.photos.each do |photo| %>
-    <div>
-      <%= image_tag photo.photo_location.url %>
+    <div class="text-center well-lg margin-top-50 drop-shadow radius-25">
+      <%= image_tag photo.photo_location.url, class:"drop-shadow radius-25" %>
       <% if current_admin.present? %>
-        <button>
-          <%= link_to 'Destroy', photo, method: :delete, :confirm => "you sure you want to delete?" %>
-        </button>
+
+      <button type="button" class="btn-red drop-shadow">
+        <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+        <%= link_to 'Destroy', photo, method: :delete, :confirm => "Are you sure you wish to delete this photo?" %>
+      </button>
+
     </div>
       <% end %>
   <% end %>

@@ -6,11 +6,11 @@
 <% unless @events.nil? %>
 	<% @events.each do |event| %>
 
-			<div class="col-md-12 text-center background-gray well drop-shadow">
+			<div class="col-md-12 text-center background-grey-tint well drop-shadow radius-25">
 
 				<div class="col-md-4 pull-left padding-top-10 text-center">
 					<%= link_to event_path(event) do %>
-					<%= image_tag event.display_photo.url, class: "drop-shadow" %>
+					<%= image_tag event.display_photo.url, class: "drop-shadow radius-25" %>
 					<% end %>
 
 				</div>
@@ -19,15 +19,15 @@
 
 
 
-			      <div class="col-md-8 text-center pull-right">
+			      <div class="col-md-8 text-center pull-right radius-25">
 
 							<%= link_to event_path(event) do %>
-			        <h3 class="well-sm background-white drop-shadow"><%= "#{event.name}" %>
+			        <h3 class="well-sm background-white drop-shadow radius-25"><%= "#{event.name}" %>
 							</h3>
 							<% end %>
 
 
-							<div class=" background-white well-sm text-left drop-shadow padding-10 margin-10">
+							<div class=" background-white well-sm text-left drop-shadow radius-25 padding-10 margin-10">
 
 								 <h4>Description:</h4><br>	<%= event.description %>
 

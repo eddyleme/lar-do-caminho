@@ -1,23 +1,36 @@
-<div class="container">
-  <div class="text-center well-lg background-white text-center margin-40 drop-shadow">
+<div class="container text-center padding-30">
+  <div class="col-md-12 text-center background-grey-tint color-white well-sm drop-shadow radius-25">
 		<h1><%= @event.name %></h1>
-<p>events/show.html.erb</p>
+    <p><%= @event.description %></p>
+  <% if current_admin.present? %>
+  <div class="col-md-12 well text-center drop-shadow radius-25">
+    <%= render 'package_form' , package: @package, event_id: @event_id %>
+    <div class="">
+      <% @event.packages.each do |package| %>
+        <div class="drop-shadow col-md-2 margin-10 radius-25">
+          <h4>--<%= package.name %> Package--</h4>
+          <button type="button" class="btn-red drop-shadow">
+            <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+            <%= link_to 'Destroy', package, method: :delete, :confirm => "Are you sure you wish to delete #{package.name}?" %>
+          </button>
+        </div>
 
-<% @event.packages.each do |package| %>
-	<%= package.name %>
-	<% if current_admin.present? %>
-		<%= link_to 'Destroy', package, method: :delete %>
-	<% end %>
-<% end %>
+      <% end %>
+    </div>
+  </div>
+  <% else %>
+  <% end %>
+  <div class="col-md-12">
+    <div class="row-centered">
+    <% @event.packages.each do |package| %>
+      <%= render 'ticket_form' , ticket: @ticket, package: package, package_id: package.id%>
+    <% end %>
+  </div>
 
-<% if current_admin.present? %>
-	<%= render 'package_form' , package: @package, event_id: @event_id %>
-<% else %>
-<% end %>
+  </div>
 
-<% @event.packages.each do |package| %>
-	<%= render 'ticket_form' , ticket: @ticket, package: package, package_id: package.id%>
-<% end %>
+</div>
+
 
 
 </div>
