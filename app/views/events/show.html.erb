@@ -11,7 +11,7 @@
           <h4>--<%= package.name %> Package--</h4>
           <button type="button" class="btn-red drop-shadow">
             <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
-            <%= link_to 'Destroy', package, method: :delete, :confirm => "Are you sure you wish to delete #{package.name}?" %>
+            <%= link_to 'Destroy', package, method: :delete, class: "btn-red", :confirm => "Are you sure you wish to delete #{package.name}?" %>
           </button>
         </div>
 
