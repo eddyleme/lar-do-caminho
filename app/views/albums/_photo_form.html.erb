@@ -1,10 +1,8 @@
-<div class="background-white well well-lg drop-shadow margin-30">
-
+<div class="background-white col-md-3 col-centered well-lg color-gray drop-shadow radius-25 margin-30">
 <%= form_with(model: [@album, photo], local: true) do |form| %>
   <% if photo.errors.any? %>
-    <div id="error_explanation">
+    <div id="text-center">
       <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-
       <ul>
       <% photo.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,14 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="text-center">
     <%= form.label :photo_location %>
     <%= form.file_field :photo_location, multiple: true, id: :photo_file_location %>
+    <%= form.submit class: "btn-green"%>
   </div>
 
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
 </div>

@@ -283,7 +283,13 @@ p.site-slogan {
 .well {
   border: 0px !important;
 }
+.photo-pic-box {
 
+  height: 133px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+
+}
 /*-----------------------------------------------------------------------------------*/
 /* Utility Classes */
 /*-----------------------------------------------------------------------------------*/
@@ -926,6 +932,7 @@ p.site-slogan {
   text-decoration: none;
   background-color: #56aaff;
   border-bottom: 5px;
+  border-radius: 20px;
 }
 #hornav ul ul li:hover a {
   text-decoration: none;

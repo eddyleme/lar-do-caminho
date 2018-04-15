@@ -62,10 +62,13 @@
                         <%= link_to'Home', root_path, class:"drop-shadow fa fa-home"%>
                       </li>
                       <li>
-                        <%= link_to'About', root_path(:anchor => "aboutus"), class:"drop-shadow fa fa-info-circle"%>
+                        <%= link_to'About', root_path(:anchor => "aboutus"), class:"drop-shadow radius-10 fa fa-info-circle"%>
                         <ul class="drop-shadow ">
-                          <li class="background-gray-light">
+                          <li class="background-gray-light radius-20">
                             <%= link_to'Our Team', root_path(:anchor => "ourteam"), class:"drop-shadow fa fa-users"%>
+                          </li>
+                          <li class="background-gray-light radius-20">
+                            <%= link_to'Contact Us', contact_path, class:"drop-shadow fa fa-phone"%>
                           </li>
                         </ul>
                       </li>

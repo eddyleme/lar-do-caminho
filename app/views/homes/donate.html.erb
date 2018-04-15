@@ -1,29 +1,51 @@
-<div class="container text-center padding-top-20 padding-bottom-3">
-  <%= image_tag('iwant_tohelp.gif', { :style => 'width: 20%', class: "padding-top" } ) %>
+<div class="container text-center ">
+  <div class="col-md-12 row-centered padding-vert-60 drop-shadow background-grey-tint radius-25">
 
-  <p class="padding-top-10">
-    <strong>Click on Paypal or Facebook and make your donation.</strong>
-  </p>
 
-    <p class="padding-bottom-10">
+    <!-- <div class="col-md-5 col-centered">
+
+    </div> -->
+<div class="col-md-7 col-centered background-white well well-lg text-center drop-shadow radius-25">
+  <div class="row-centered text-center">
+
+<!-- <div class="col-md-12 col-centered"> -->
+<%= image_tag('iwant_tohelp.gif', class: "margin-bottom-50") %>
+<!-- </div> -->
+<div class="col-md-8 col-centered">
+
+    <strong>Click on Paypal or Facebook to make your donation.</strong>
+</div>
+
+    <p><br></p>
+    <div class:="col-md-2 col-centered">
+    <%= link_to image_tag('ppcom.png'), 'https://www.paypal.com/br/cgi-bin/webscr?cmd=_flow&SESSION=u0OdSQvYpUHAUV15PV2fvUBDkI9bP8Cs-aZYRoXEfvyM76LRco93euNv79m&dispatch=5885d80a13c0db1f8e263663d3faee8db8175432b4df92754f4b4adb5a123d61&rapidsState=Donation__DonationFlow___StateDonationBilling&rapidsStateSignature=d205d9fabfb754a3dd818fdd391e4d8dec7f48da' %>
     <%= link_to image_tag('donate_button_english.gif'), 'https://www.paypal.com/br/cgi-bin/webscr?cmd=_flow&SESSION=u0OdSQvYpUHAUV15PV2fvUBDkI9bP8Cs-aZYRoXEfvyM76LRco93euNv79m&dispatch=5885d80a13c0db1f8e263663d3faee8db8175432b4df92754f4b4adb5a123d61&rapidsState=Donation__DonationFlow___StateDonationBilling&rapidsStateSignature=d205d9fabfb754a3dd818fdd391e4d8dec7f48da' %>
-      <div class="divider">
+    </div>
+    <p><br></p>
+    <div class:="col-md-2 col-centered">
      <%= link_to image_tag('facebook.jpg'), 'https://www.facebook.com/LarDoCaminho' %>
+    </div>
+
+
+
+</div>
+</div>
+
+
+    <div class="col-md-10 col-centered background-white well well-lg text-center drop-shadow radius-25">
+
+        <div class="col-md-6 pull-left">
+        <%= link_to image_tag("amazon_smile.jpeg"), 'https://smile.amazon.com/ch/82-1443858' %>
+        </div>
+        <div class="col-md-6 pull-right margin-vert-10">Once you have selected Lar do Caminho USA as your charity, it will remain listed as your supported charity every time you log into smile.amazon.com. All you have to do is remember to shop at smile.amazon.com instead of amazon.com. You might find it helpful to add smile.amazon.com to the bookmark list in your browser.
+        </div>
+
+        <div class="col-md-6 pull-right margin-vert-10">If you’re an Amazon shopper, it’s very easy to support Lar do Caminho USA every time you shop on Amazon at no cost to you. AmazonSmile is a website operated by Amazon that has exactly the same low prices and wide selection as Amazon. By logging in to smile.amazon.com and selecting Lar do Caminho USA as the charity of your choice, Amazon will donate 0.5% of the price of all qualifying purchases to Lar do Caminho USA.
+       </div><br>
+       <div class="col-md-6 pull-right margin-vert-10">Visit AmazonSmile to get started!
+          Go to <%= link_to 'smile.amazon.com', 'https://smile.amazon.com/ch/82-1443858'%> and Amazon donate to Lar Do Caminho USA.
+        </div>
       </div>
-    </p>
 
-    <div class="text-center">
-    <%= image_tag("amazon_smile.jpeg", {:style => 'width: 30%' } )  %>
-    </div>
-
-    <div class="col-md-12 background-white text-center bottom-border-shadow padding-top-60">
-      <p class="col-md-6 pull-right padding-top">Once you have selected Lar do Caminho USA as your charity, it will remain listed as your supported charity every time you log into smile.amazon.com. All you have to do is remember to shop at smile.amazon.com instead of amazon.com. You might find it helpful to add smile.amazon.com to the bookmark list in your browser.
-      </p>
-
-      <p>If you’re an Amazon shopper, it’s very easy to support Lar do Caminho USA every time you shop on Amazon at no cost to you. AmazonSmile is a website operated by Amazon that has exactly the same low prices and wide selection as Amazon. By logging in to smile.amazon.com and selecting Lar do Caminho USA as the charity of your choice, Amazon will donate 0.5% of the price of all qualifying purchases to Lar do Caminho USA.
-     </p>
-     <p class="padding-top-30">Visit AmazonSmile to get started!<br>
-        Go to <%= link_to 'smile.amazon.com', 'https://smile.amazon.com/ch/82-1443858'%> and Amazon donates to Lar Do Caminho USA.
-      </p>
-    </div>
+  </div>
 </div>

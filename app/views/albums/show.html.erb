@@ -1,35 +1,48 @@
 <div class="container">
-  <div class="text-center well-lg background-white margin-top-50 drop-shadow radius-25">
+  <div class="text-center well-lg background-grey-tint color-white margin-top-50 drop-shadow radius-25">
+    <p id="notice"><%= notice %></p>
+    <p>
+      <h1><strong>Album Title:</strong></h1>
+    <h2 class="color-white"><%= @album.album_title %></h2>
+    </p>
 
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Album Title:</strong>
-  <%= @album.album_title %>
-</p>
+<div class="row-centered well radius-25">
+  <div class="col-centered col-md-8 well drop-shadow radius-25">
 
-<p>
-  <strong>Cover Photo:</strong>
-  <%= image_tag @album.cover_photo %>
-</p>
 
-<% if current_admin.present? %>
-	<%= render 'photo_form' , photo: @photo, album_id: @album_id %>
-<% end %>
+    <p>
+      <strong>Cover Photo:</strong>
+      <%= image_tag @album.cover_photo, class: "radius-25"%>
+    </p>
+  </div>
+  <% if current_admin.present? %>
+  	<%= render 'photo_form' , photo: @photo, album_id: @album_id %>
+  <% end %>
+</div>
 
+
+
+  <div class="row-centered text-center">
   <% @album.photos.each do |photo| %>
-    <div class="text-center well-lg margin-top-50 drop-shadow radius-25">
-      <%= image_tag photo.photo_location.url, class:"drop-shadow radius-25" %>
-      <% if current_admin.present? %>
 
-      <button type="button" class="btn-red drop-shadow">
-        <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
-        <%= link_to 'Destroy', photo, method: :delete, :confirm => "Are you sure you wish to delete this photo?" %>
-      </button>
+
+
+    <div class=" col-md-2 col-centered well margin-5 drop-shadow radius-25">
+      <div class="text-center">
+        <%= image_tag photo.photo_location.url, class:"photo-pic-box" %>
+        <% if current_admin.present? %>
+
+        <button type="button" class="btn-red drop-shadow">
+          <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+          <%= link_to 'Destroy', photo, method: :delete, :confirm => "Are you sure you wish to delete this photo?" %>
+        </button>
+        <% end %>
+      </div>
 
     </div>
-      <% end %>
-  <% end %>
 
+  <% end %>
+</div>
 </div>
 
 </div>
