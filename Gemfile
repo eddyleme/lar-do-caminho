@@ -15,6 +15,8 @@ gem 'animate-rails', '~> 1.0', '>= 1.0.10'
 gem 'jquery-rails'
 # Font Awesome. Awesome.
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
+# Lightbox for images to be cool and such.
+gem 'lightbox2-rails', '~> 2.8', '>= 2.8.2.1'
 
 gem 'stripe'
 

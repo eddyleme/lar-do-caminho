@@ -27,18 +27,18 @@
               <div class="row">
 
                 <div class="pull-right">
-                  <ul class="social-icons circle row-centered padding-vert-10">
+                  <ul class="social-icons circle row-centered padding-vert-20">
                     <div class="col-md-1 col-centered">
                       <a href="http://www.facebook.com/lardocaminhousa"  title="Facebook">
                         <li>
-                          <i class="fa fa-facebook fa fa-2x"></i>
+                          <i class="fa-facebook fa-2x"></i>
                         </li>
                       </a>
                     </div>
                     <div class="col-md-1 col-centered">
                       <a href="http://www.instagram.com/lardocaminhousa" title="Instagram">
                         <li class="">
-                          <i class="fa fa-instagram fa fa-2x"></i>
+                          <i class="fa-instagram fa-2x"></i>
                         </li>
                       </a>
                     </div>
@@ -50,53 +50,51 @@
                 <div class="col-md-8 no-padding pull-right ">
 
                   <div class="visible-lg">
-                    <ul id="hornavmenu" class="nav navbar-nav pull-right drop-shadow">
+                    <ul id="hornavmenu" class="nav navbar-nav pull-right">
                       <li>
                         <% if current_admin.present? %>
-                  	  	  <%= link_to "Logout", logout_path,  class: "drop-shadow fa fa-sign-out" %>
+                  	  	  <%= link_to "Logout", logout_path,  class: "drop-shadow margin-1 fa-sign-out" %>
                         <% else %>
-                          <%= link_to "Login", login_path, class: "drop-shadow fa fa-sign-in" %>
+                          <%= link_to "Login", login_path, class: "drop-shadow margin-1 fa-sign-in" %>
                   	    <% end %>
                       </li>
                       <li>
-                        <%= link_to'Home', root_path, class:"drop-shadow fa fa-home"%>
+                        <%= link_to'Home', root_path, class:"drop-shadow margin-1 fa-home"%>
                       </li>
                       <li>
-                        <%= link_to'About', root_path(:anchor => "aboutus"), class:"drop-shadow radius-10 fa fa-info-circle"%>
+                        <%= link_to'About', root_path(:anchor => "aboutus"), class:"drop-shadow margin-1 radius-10 fa-info-circle"%>
                         <ul class="drop-shadow ">
                           <li class="background-gray-light radius-20">
-                            <%= link_to'Our Team', root_path(:anchor => "ourteam"), class:"drop-shadow fa fa-users"%>
+                            <%= link_to'Our Team', root_path(:anchor => "ourteam"), class:"drop-shadow fa-users"%>
                           </li>
                           <li class="background-gray-light radius-20">
-                            <%= link_to'Contact Us', contact_path, class:"drop-shadow fa fa-phone"%>
+                            <%= link_to'Contact Us', contact_path, class:"drop-shadow fa-phone"%>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <%= link_to'Gallery', albums_path(), class:"drop-shadow fa fa-picture-o"%>
+                        <%= link_to'Gallery', albums_path(), class:"drop-shadow margin-1 fa-picture-o"%>
                       </li>
                       <li>
-                        <%= link_to'Events', events_path, class:"drop-shadow fa fa-bullhorn"%>
+                        <%= link_to'Events', events_path, class:"drop-shadow margin-1 fa-bullhorn"%>
                       </li>
                       <li>
-                        <%= link_to'Donate', donate_path(), class:"drop-shadow fa fa-gift"%>
+                        <%= link_to'Donate', donate_path(), class:"drop-shadow margin-1 fa-gift"%>
                       </li>
-
-
-
-
-
 
                     </ul>
                   </div>
+                    <div class="text-center padding-5 margin-5">
+                      <p id="notice"><%= notice %></p>
+                    </div>
                 </div>
 
               </div>
-
             </div>
           </div>
         </div>
       </div>
+
     </div>
 <!-- <body> -->
     <!-- End Header -->
@@ -104,6 +102,7 @@
 
   <!-- Main -->
   <div class="mainarea bg">
+
     <%= yield %>
     <div class="push"></div>
   </div>
@@ -120,29 +119,24 @@
           <div class="col-md-3 pull-left">
             <h3 class="margin-bottom-10"><strong>LAR DO CAMINHO USA</strong></h3>
             <p class="text-left">
-              <span class="fa fa-phone">Telephone:</span>&nbsp;<a href="tel:3052050077">+1.305.205.0077</a>
+              <span class="fa-phone">Telephone:</span>&nbsp;<a href="tel:3052050077">+1.305.205.0077</a>
               <br>
-              <span class="fa fa-envelope">Email:</span>
+              <span class="fa-envelope">Email:</span>
               <a href="mailto:admin@lardocaminhousa.org">admin@lardocaminhousa.org</a>
+              <!-- <br>
+              <span class="fa-link">Website:</span>
+              <a href="http://www.lardocaminhousa.org/">www.lardocaminhousa.org</a> -->
               <br>
-              <span class="fa fa-link">Website:</span>
-              <a href="http://www.lardocaminhousa.org/">www.lardocaminhousa.org</a>
-              <br>
-              <!-- < if current_user > -->
-              <!-- Signed in as <= current_user.username >. -->
 
-              <!-- <= link_to "Log out", sessions_path("current"), :method => :delete > -->
 
-              <a href="#">
+
 
                 <% if current_admin.present? %>
-          	  	  <%= link_to "Logout", logout_path,  class: "fa fa-sign-out" %>
+          	  	  <%= link_to "Logout", logout_path,  class: "fa-sign-out" %>
                 <% else %>
-                  <%= link_to "Login", login_path, class: "fa fa-sign-in" %>
+                  <%= link_to "Login", login_path, class: "fa-sign-in" %>
           	    <% end %>
-              </a>
-              <!-- < else >
-              < end > -->
+
             </p>
           </div>
           <div class="col-md-1">
@@ -152,27 +146,27 @@
           </div>
           <div class="col-md-3 text-right">
               <ul class="list-inline">
-                <li class="margin-10 drop-shadow radius-15">
-                    <%= link_to'Home', root_path, class:"fa fa-home"%>
+                <li class="margin-10 footerhover drop-shadow radius-15">
+                    <%= link_to'Home', root_path, class:"fa-home"%>
                   </li>
-                  <li class="margin-10 drop-shadow radius-15">
-                    <%= link_to'About', root_path(:anchor => "aboutus"), class:"fa fa-info-circle"%>
+                  <li class="margin-10 footerhover drop-shadow radius-15">
+                    <%= link_to'About', root_path(:anchor => "aboutus"), class:"fa-info-circle"%>
                   </li>
-                  <li class="margin-10 drop-shadow radius-15">
-                    <%= link_to'Our Team', root_path(:anchor => "ourteam"), class:"fa fa-users"%>
+                  <li class="margin-10 footerhover drop-shadow radius-15">
+                    <%= link_to'Our Team', root_path(:anchor => "ourteam"), class:"fa-users"%>
                   </li>
               </ul>
           </div>
           <div class="col-md-3 text-right">
               <ul class="list-inline">
-                  <li class="margin-10 drop-shadow radius-15">
-                    <%= link_to'Gallery', albums_path(), class:"fa fa-picture-o"%>
+                  <li class="margin-10 footerhover drop-shadow radius-15">
+                    <%= link_to'Gallery', albums_path(), class:"fa-picture-o"%>
                   </li>
-                  <li class="margin-10 drop-shadow radius-15">
-                    <%= link_to'Events', events_path, class:"fa fa-bullhorn"%>
+                  <li class="margin-10 footerhover drop-shadow radius-15">
+                    <%= link_to'Events', events_path, class:"fa-bullhorn"%>
                   </li>
-                  <li class="margin-10 drop-shadow radius-15">
-                    <%= link_to'Donate', donate_path(), class:"fa fa-gift"%>
+                  <li class="margin-10 footerhover drop-shadow radius-15">
+                    <%= link_to'Donate', donate_path(), class:"fa-gift"%>
                   </li>
               </ul>
           </div>
@@ -186,14 +180,14 @@
       <div class="container">
         <div class="row">
           <!-- Footer Menu -->
-          <div id="footermenu" class="col-md-8">
+          <div class="col-md-8">
             <p class="pull-left">&copy; Lar-Do-Caminho All rights reserved.</p>
           </div>
           <!-- End Footer Menu -->
 
           <div id="copyright" class="col-md-4">
             <p class="pull-right">
-              Design: <a href="https://github.com/eddyleme/lar-do-caminho">Wyncoders</a></p>
+              Design: <a href="https://github.com/eddyleme/lar-do-caminho">LavaScript</a></p>
             </div>
           </div>
         </div>

@@ -1,31 +1,49 @@
 <div class="container">
   <div class="text-center well-lg background-grey-tint margin-50 drop-shadow radius-25">
 
-<p id="notice"><%= notice %></p>
 <h1 class="color-white">Albums</h1>
 <% if current_admin.present? %>
   <%= render 'form', album: @album, method: 'create' %>
 <% end %>
 
-<% unless @albums.nil? %>
-  <% @albums.each do |album| %>
-    <div class="text-center well-lg background-white margin-vert-20 drop-shadow radius-25">
-      <p>
-        <%= link_to album_path(album), class: "color-gray" do %>
-        <h2>  <%= "#{album.album_title}" %></h2>
-      </p>
-      <%= image_tag album.cover_photo.url, class:"drop-shadow radius-25"%>
-      <% end %>
-      <% if current_admin.present? %>
-        <button type="button" class="btn-red drop-shadow">
-          <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
-          <%= link_to 'Destroy', album, method: :delete, class: "btn-red", :confirm => "Are you sure you wish to delete this album?" %>
-        </button>
+
+
+
+
+
+
+  <div class="row-centered">
+    <% unless @albums.nil? %>
+      <% @albums.each do |album| %>
+
+    <div class="col-md-5 col-centered well margin-5 drop-shadow radius-25 background-white">
+        <div class="text-center">
+          <p>
+            <%= link_to album_path(album), class: "color-gray" do %>
+            <h3 class="text-center">  <%= "#{album.album_title}" %></h3>
+          </p>
+          <%= image_tag album.cover_photo.url, class:"photo-box-lg"%>
+          <% end %>
+
+        </div>
+        <div class="col-centered col-md-12">
+          <div class="text-center">
+            <% if current_admin.present? %>
+            <button type="button" class="btn-red drop-shadow">
+              <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+              <%= link_to 'Destroy', album, method: :delete, class: "btn-red", :confirm => "Are you sure you wish to delete this album?" %>
+              <% end %>
+            </button>
+
+          </div>
+
+        </div>
+    </div>
+    <% end %>
+    <% end %>
 
     </div>
-      <% end %>
-  <% end %>
-<% end %>
+
 
 
 </div>

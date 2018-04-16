@@ -13,6 +13,7 @@
 
   <div class="text-center">
     <%= form.label :photo_location %>
+    <%= form.text_field :caption %>
     <%= form.file_field :photo_location, multiple: true, id: :photo_file_location %>
     <%= form.submit class: "btn-green" %>
   </div>

@@ -1,15 +1,12 @@
 <div class="container">
   <div class="text-center well-lg background-grey-tint color-white margin-top-50 drop-shadow radius-25">
-    <p id="notice"><%= notice %></p>
+
     <p>
       <h1><strong>Album Title:</strong></h1>
     <h2 class="color-white"><%= @album.album_title %></h2>
     </p>
-
 <div class="row-centered well radius-25">
   <div class="col-centered col-md-8 well drop-shadow radius-25">
-
-
     <p>
       <strong>Cover Photo:</strong>
       <%= image_tag @album.cover_photo, class: "radius-25"%>
@@ -20,12 +17,8 @@
   <% end %>
 </div>
 
-
-
   <div class="row-centered text-center">
   <% @album.photos.each do |photo| %>
-
-
 
     <div class=" col-md-2 col-centered well margin-5 drop-shadow radius-25">
       <div class="text-center">

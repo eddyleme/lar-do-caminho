@@ -30,6 +30,10 @@ TABLE OF CONTENTS
 /*-----------------------------------------------------------------------------------*/
 /* Basic */
 /*-----------------------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Dekko|Just+Me+Again+Down+Here|Sunshiney');
+
+
 html {
   overflow-y: scroll;
   margin: 0;
@@ -39,7 +43,7 @@ html {
 }
 body {
   line-height: 1.7em;
-  font-family: Roboto Condensed;
+  font-family: 'Dekko', cursive;
   font-size: 14px;
   font-weight: 400;
   background-color: #f0f0f0;
@@ -215,8 +219,9 @@ p.site-slogan {
   color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
 }
-#footermenu ul li a:hover {
-  color: #ffffff;
+.footerhover:hover {
+  background: #afe313;
+  border-radius: 25px;
 }
 /* Copyright */
 #copyright p {
@@ -289,6 +294,20 @@ p.site-slogan {
   height: 133px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
+  margin: 0 auto;
+}
+
+.photo-box-lg {
+
+  height: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  border-radius: 25px;
+
+}
+
+.dekko {
+  font-family: 'Dekko', cursive;
 
 }
 /*-----------------------------------------------------------------------------------*/
@@ -440,6 +459,9 @@ p.site-slogan {
   border-radius:30px;
 }
 
+.padding-5 {
+  padding: 5px;
+}
 .padding-10 {
   padding: 10px;
 }
@@ -458,6 +480,19 @@ p.site-slogan {
 .padding-60 {
   padding: 60px;
 }
+.margin-1 {
+  margin: 1px;
+}
+.margin-2 {
+  margin: 2px;
+}
+.margin-3 {
+  margin: 3px;
+}
+.margin-4 {
+  margin: 4px;
+}
+
 .margin-5 {
   margin: 5px;
 }
@@ -1242,14 +1277,14 @@ h2 {
   line-height: 1em;
   margin: 0 0 10px;
   color: #555555;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Dekko', cursive;
   font-size: 32px;
 }
 h3 {
   font-size: 20px;
   font-weight: 300;
   padding: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Dekko', cursive;
   margin: 0;
   color: #555555;
 }
@@ -2638,7 +2673,7 @@ ul.social-icons li a:hover {
   background: transparent url(nextlabel.gif) no-repeat 100% 15%;
 }
 #lbBottom {
-  font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+  font-family: 'Dekko', cursive;
   font-size: 10px;
   color: #666;
   line-height: 1.4em;
