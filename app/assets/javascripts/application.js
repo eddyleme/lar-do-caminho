@@ -16,3 +16,4 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require jquery.parallax-1.1.3
+//= require lightbox

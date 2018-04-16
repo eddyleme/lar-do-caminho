@@ -22,7 +22,8 @@
 
     <div class=" col-md-2 col-centered well margin-5 drop-shadow radius-25">
       <div class="text-center">
-        <%= image_tag photo.photo_location.url, class:"photo-pic-box" %>
+         <!-- image_tag photo.photo_location.url, class:"photo-pic-box" -->
+         <%= link_to(image_tag(photo.photo_location.url(photo, :image, :fit, 100, 100)), photo.photo_location.url(photo, :image, :fit, 500, 500), data: { lightbox: "#{@album.album_title}", title: "#{@album.album_title}" }) %>
         <% if current_admin.present? %>
 
         <button type="button" class="btn-red drop-shadow">
