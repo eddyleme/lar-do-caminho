@@ -305,6 +305,18 @@ p.site-slogan {
   border-radius: 25px;
 
 }
+.event-box {
+
+  min-width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  border-radius: 25px;
+
+}
+
+.zeromargin{
+  margin: 0 auto;
+}
 
 .dekko {
   font-family: 'Dekko', cursive;
